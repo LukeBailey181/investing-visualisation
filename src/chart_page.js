@@ -10,9 +10,9 @@ export default function Chart_Page({ navigation }) {
     return (
         <View style={styles.container}>
             <Text>Chart Page</Text>
-            <View style={{backgroundColor:"#fb8c00", borderRadius:30}}>
+            <View>
                 <StockLineChart 
-                data={[1,2,3,4]}
+                data={[1,2,1,5]}
                 labels={["1","2","3","4"]}
                 />
             </View>

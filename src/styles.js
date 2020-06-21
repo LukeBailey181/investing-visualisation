@@ -14,6 +14,7 @@ export const colors = {
 export default StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection:'column',
         backgroundColor: "#FFFFFF",
         alignItems: 'center',
         justifyContent: 'center',
@@ -25,7 +26,10 @@ export default StyleSheet.create({
         backgroundColor: colors.primaryColor,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 50
+        borderRadius: 50,
+        width:60,
+        height:60,
+        borderWidth: 2
     },
 })
 

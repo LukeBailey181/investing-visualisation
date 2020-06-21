@@ -1,8 +1,15 @@
 import React from 'react';
-import { Button, Text, View, TouchableOpacity, Dimensions } from 'react-native';
-import styles from "./styles.js";
+import { Button, Text, View, TouchableOpacity, Dimensions, Image } from 'react-native';
+import styles, { colors } from "./styles.js";
 import { LineChart } from "react-native-chart-kit";
+import { useNavigation, useBackButton } from '@react-navigation/native';
 
+
+export const Images = {
+    trees: require("../assets/trees.png"),
+    tree: require("../assets/new_tree.png"),
+    chart: require("../assets/new_chart.png")
+}
 
 export function StockLineChart(props) {
 
@@ -59,10 +66,25 @@ function defaultValue(possibleInput, defaultValueValue) {
 
 export function HomeScreenButton(props) {
 
+    const navigation = useNavigation();
+
+    const navigate = () => {
+        if (props.nav) {
+            navigation.navigate(props.route)
+        }
+    }
+
     return (
         <View>
-            <TouchableOpacity>
-                <Text>Button Time</Text>
+            <TouchableOpacity 
+            style={[styles.homeScreenButton, {backgroundColor: '#FFFF', borderColor:props.borderColor}]}
+            onPress={navigate}
+            >
+                <Image
+                style={{height:props.height,width:props.width}}
+                source={props.image}
+                >
+                </Image>
             </TouchableOpacity>
         </View>
     )
