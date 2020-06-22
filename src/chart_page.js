@@ -17,7 +17,7 @@ export default function Chart_Page({ navigation }) {
                 />
             </View>
             <Button 
-                title="Go to forrest page"
+                title="Go to home page"
                 onPress={() => navigation.navigate("Home")}
             />
         </View>

@@ -3,11 +3,11 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import styles from "./styles.js";
 
 
-export default function TreeStorePage({ navigation }) {
+export default function ForestPage ({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Text>Tree Store Page</Text>
+            <Text>Forest Page</Text>
             <Button 
                 title="Go to home page"
                 onPress={() => navigation.navigate("Home")}

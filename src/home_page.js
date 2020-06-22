@@ -6,13 +6,13 @@ import { HomeScreen, HomeScreenButton, Images } from "./helperUI";
 import { color } from 'react-native-reanimated';
 
 
-export default function Forrest_Page({ navigation }) {
+export default function HomePage({ navigation }) {
 
     return (
         <View style={[styles.container, {width:width, height:height}]}>
             <View style={{flex:4, width: width}}> 
                 <View style={{justifyContent:"center", alignItems:"center"}}>
-                    <Text>Forrest Page</Text>
+                    <Text>Home Page</Text>
                 </View>
                 <Button 
                     title="Go to Charts"
@@ -29,8 +29,9 @@ export default function Forrest_Page({ navigation }) {
                     image={Images.tree}
                     width={50}
                     height={50}
-                    nav={false}
+                    nav={true}
                     borderColor={colors.primaryColor}
+                    route="Tree Store"
                     />
                 </View>
                 <View stlye ={{flex:1, alignItems:"center", justifyContent:"center"}}>
@@ -39,8 +40,9 @@ export default function Forrest_Page({ navigation }) {
                         image={Images.trees}
                         width={50}
                         height={50}
-                        nav={false}
+                        nav={true}
                         borderColor={colors.secondaryColor}
+                        route={"Forest Page"}
                         />
                     </View>
                 </View>
