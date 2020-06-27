@@ -1,8 +1,10 @@
-import React from 'react';
-import { Button, Text, View, TouchableOpacity, Dimensions, Image } from 'react-native';
+import React, { useState } from 'react';
+import { Button, Text, View, TouchableOpacity, Dimensions, Image, LayoutAnimation } from 'react-native';
 import styles, { colors } from "./styles.js";
 import { LineChart } from "react-native-chart-kit";
 import { useNavigation, useBackButton } from '@react-navigation/native';
+import Icon from "react-native-vector-icons/MaterialIcons";
+import { FlatList } from 'react-native-gesture-handler';
 
 
 export const Images = {
@@ -87,5 +89,48 @@ export function HomeScreenButton(props) {
                 </Image>
             </TouchableOpacity>
         </View>
+    )
+}
+
+export function Accordian (props) {
+
+    const [data, setData] = useState(props.data);
+    const [expanded, setExpanded] = useState(false);
+
+    const Expand = () => {
+        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+        setExpanded(!expanded)
+    }
+
+    return(
+        <View>
+            <TouchableOpacity style={styles.row} onPress={()=>Expand()}>
+                <Text>{props.title}</Text>
+                <Icon name={expanded ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} color={colors.secondaryColor} />
+            </TouchableOpacity>
+            <View style={styles.Hr}/>
+            {
+                expanded &&
+                <View style={styles.child}>
+                    <Text>{props.data}</Text>    
+                </View>
+            }
+       </View>
+    )
+}
+
+export function AccordianList (props) {
+
+    return(
+        <FlatList
+            data = {props.data}
+            renderItem = {({ item }) => {
+                return (<Accordian 
+                    data={item.data}
+                    title={item.title}
+                />)
+            }}
+            keyExtractor = {item => item.id}
+        />
     )
 }

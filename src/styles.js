@@ -1,4 +1,5 @@
 import {StyleSheet, Dimensions} from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export const width = Dimensions.get('window').width; //width of screen
 export const height = Dimensions.get('window').height; //height of screen
@@ -12,6 +13,12 @@ export const colors = {
 }
 
 export default StyleSheet.create({
+    topContainer: {
+        flex:1,
+        paddingTop: 100,
+        height: height,
+        flexDirection: "column",
+    },
     container: {
         flex: 1,
         flexDirection:'column',
@@ -31,5 +38,28 @@ export default StyleSheet.create({
         height:85,
         borderWidth: 2
     },
+    hr: {
+        height:3,
+        color: colors.secondaryColor,
+        width: width
+    },
+    row: { //TODO change this styling
+        flexDirection: 'row',
+        justifyContent:'space-between',
+        height:56,
+        paddingLeft:25,
+        paddingRight:18,
+        alignItems:'center',
+        backgroundColor: Colors.CGRAY,
+    },
+    title:{ //TODO change this styling
+        fontSize: 14,
+        fontWeight:'bold',
+        color: Colors.DARKGRAY,
+    },
+    child:{ //TODO change this styling
+        backgroundColor: Colors.LIGHTGRAY,
+        padding:16,
+    }
 })
 
