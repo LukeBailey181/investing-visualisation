@@ -22,6 +22,10 @@ export default function HomePage({ navigation }) {
                     title="Go to Tree Store Page"
                     onPress={() => navigation.navigate("Tree Store")}
                 />
+                <Button
+                    title="Go to test page" 
+                    onPress={() => navigation.navigate("Test Page")}
+                />
             </View>
             <View style={{ flexDirection:'row', flex: 1, justifyContent:"center", width:width, alignItems:"center"}}>
                 <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
