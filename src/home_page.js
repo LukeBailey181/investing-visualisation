@@ -71,6 +71,7 @@ export default function HomePage({ navigation }) {
 }
 
 const onGLContextCreate = async (gl) => {
+  // yet to switch over 
   var Colors = {
     cyan: 0x248079,
   	brown: 0xA98F78,
