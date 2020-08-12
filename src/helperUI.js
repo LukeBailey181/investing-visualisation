@@ -10,7 +10,9 @@ import { FlatList } from 'react-native-gesture-handler';
 export const Images = {
     trees: require("../assets/trees.png"),
     tree: require("../assets/new_tree.png"),
-    chart: require("../assets/new_chart.png")
+    chart: require("../assets/new_chart.png"),
+    house: require("../assets/home.png"),
+    plus: require("../assets/plus.png")
 }
 
 export function StockLineChart(props) {
@@ -73,7 +75,10 @@ export function HomeScreenButton(props) {
     const navigate = () => {
         if (props.nav) {
             navigation.navigate(props.route)
+        } else {
+            props.onPress()
         }
+        
     }
 
     return (
